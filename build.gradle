@@ -21,3 +21,13 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+task(runJava, dependsOn: 'classes', type: JavaExec) {
+    main = 'JavaExample'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task(runKotline, dependsOn: 'classes', type: JavaExec) {
+    main = 'KotlinExampleKt'
+    classpath = sourceSets.main.runtimeClasspath
+}

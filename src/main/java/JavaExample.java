@@ -11,7 +11,7 @@ import ca.jahed.rtpoet.utils.RTDeepCopier;
 import ca.jahed.rtpoet.utils.RTEqualityHelper;
 import ca.jahed.rtpoet.utils.RTModelValidator;
 
-public class RTPoetExample {
+public class JavaExample {
 
     public static RTModel createPingerPonger() {
         RTProtocol ppProtocol = RTProtocol.builder("PPProtocol")
