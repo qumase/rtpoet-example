@@ -6,7 +6,7 @@ its [PapyrusRT](https://github.com/kjahed/rtpoet-papyrusrt) plugin.
 ### Getting started
 
 ```bash
-git https://github.com/kjahed/rtpoet-example
+git clone https://github.com/kjahed/rtpoet-example
 ./gradlew build
 ```
 
