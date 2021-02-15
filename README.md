@@ -6,7 +6,7 @@ its [PapyrusRT](https://github.com/kjahed/rtpoet-papyrusrt) plugin.
 ### Getting started
 
 ```bash
-git https://github.com/kjahed/rtpoet-example
+git clone https://github.com/kjahed/rtpoet-example
 ./gradlew build
 ```
 
@@ -32,7 +32,7 @@ run the example.
 
 - Refer to the [RTPoet](https://github.com/kjahed/rtpoet) repository for details regarding the
   generic [RTModel data structure](https://github.com/kjahed/rtpoet/tree/master/src/main/kotlin/ca/jahed/rtpoet/rtmodel)
-  for UML-RT Model. The repository also implements helpers
+  for UML-RT models. The repository also implements helpers
   to [copy](https://github.com/kjahed/rtpoet/blob/master/src/main/kotlin/ca/jahed/rtpoet/utils/RTDeepCopier.kt),
   [equate and diff](https://github.com/kjahed/rtpoet/blob/master/src/main/kotlin/ca/jahed/rtpoet/utils/RTEqualityHelper.kt)
   ,
