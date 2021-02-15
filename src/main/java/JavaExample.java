@@ -30,7 +30,7 @@ public class JavaExample {
                                 .state(RTState.builder("playing"))
                                 .transition(
                                         RTTransition.builder("initial", "playing")
-                                                .action("this->count = 1;\nppPong.ping(count).send();")
+                                                .action("this->count = 1;\nppPort.ping(count).send();")
                                 )
                                 .transition(
                                         RTTransition.builder("playing", "playing")

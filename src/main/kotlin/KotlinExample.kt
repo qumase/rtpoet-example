@@ -31,7 +31,7 @@ private fun createPingerPonger(): RTModel {
                         RTTransition.builder("initial", "playing")
                             .action("""
                                 this->count = 1;
-                                ppPong.ping(count).send();
+                                ppPort.ping(count).send();
                             """)
                     )
                     .transition(
