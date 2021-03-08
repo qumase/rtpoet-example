@@ -1,12 +1,12 @@
 import ca.jahed.rtpoet.papyrusrt.PapyrusRTReader;
 import ca.jahed.rtpoet.papyrusrt.PapyrusRTWriter;
 import ca.jahed.rtpoet.papyrusrt.rts.SystemPorts;
-import ca.jahed.rtpoet.papyrusrt.rts.primitivetype.RTInt;
 import ca.jahed.rtpoet.rtmodel.*;
 import ca.jahed.rtpoet.rtmodel.sm.RTPseudoState;
 import ca.jahed.rtpoet.rtmodel.sm.RTState;
 import ca.jahed.rtpoet.rtmodel.sm.RTStateMachine;
 import ca.jahed.rtpoet.rtmodel.sm.RTTransition;
+import ca.jahed.rtpoet.rtmodel.types.primitivetype.RTInt;
 import ca.jahed.rtpoet.utils.RTDeepCopier;
 import ca.jahed.rtpoet.utils.RTEqualityHelper;
 import ca.jahed.rtpoet.utils.RTModelValidator;
