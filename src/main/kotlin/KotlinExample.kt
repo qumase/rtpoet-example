@@ -10,6 +10,7 @@ import ca.jahed.rtpoet.rtmodel.types.primitivetype.RTInt
 import ca.jahed.rtpoet.utils.RTDeepCopier
 import ca.jahed.rtpoet.utils.RTEqualityHelper
 import ca.jahed.rtpoet.utils.RTModelValidator
+import ca.jahed.rtpoet.utils.RTVisualizer
 
 private fun createPingerPonger(): RTModel {
     val ppProtocol =
@@ -111,4 +112,7 @@ fun main() {
 
     // get 'semantic' difference
     print(RTEqualityHelper.diff(pingerPonger, copy))
+
+    // Draw the pinger class, ignore its state machine
+    RTVisualizer.draw(asRead.capsules.first { it.name == "Pinger" }, listOf(RTStateMachine::class.java))
 }
