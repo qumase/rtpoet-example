@@ -6,9 +6,6 @@ plugins {
 group 'ca.jahed.rtpoet'
 version '1.0-SNAPSHOT'
 
-def ghProps = new Properties()
-file("github.properties").withInputStream { ghProps.load(it) }
-
 repositories {
     mavenCentral()
 
@@ -16,8 +13,8 @@ repositories {
         name = "GitHubPackages"
         url = uri("https://maven.pkg.github.com/kjahed/rtpoet")
         credentials {
-            username = ghProps.getProperty("gh.user") ?: System.getenv("GH_USER")
-            password = ghProps.getProperty("gh.token") ?: System.getenv("GH_TOKEN")
+            username = project.findProperty("gpr.user") ?: System.getenv("GH_USER")
+            password = project.findProperty("gpr.key") ?: System.getenv("GH_TOKEN")
         }
     }
 }
