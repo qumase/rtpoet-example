@@ -10,7 +10,7 @@ import ca.jahed.rtpoet.rtmodel.types.primitivetype.RTInt
 import ca.jahed.rtpoet.utils.RTDeepCopier
 import ca.jahed.rtpoet.utils.RTEqualityHelper
 import ca.jahed.rtpoet.utils.RTModelValidator
-import ca.jahed.rtpoet.utils.RTVisualizer
+import ca.jahed.rtpoet.visualizer.RTVisualizer
 
 private fun createPingerPonger(): RTModel {
     val ppProtocol =
