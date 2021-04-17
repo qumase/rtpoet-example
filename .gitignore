@@ -62,4 +62,5 @@ buildSrcTmp/
 distTmp/
 outTmp/
 .idea/
+github.properties
 PingerPonger.uml
