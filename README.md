@@ -7,6 +7,24 @@ its [PapyrusRT](https://github.com/kjahed/rtpoet-papyrusrt) plugin.
 
 ```bash
 git clone https://github.com/kjahed/rtpoet-example
+```
+
+Generate a [Github Personal Access Token](https://github.com/settings/tokens/new). You only need the
+**read:packages** permission.
+
+Append the following to [gradle.properties](gradle.properties):
+
+```bash
+gpr.user=<your_github_username>
+gpr.key=<your_github_token>
+```
+
+**Note:** Never push the modified [gradle.properties](gradle.properties) to Github. For security reasons, Github will
+disable your access token and you will have to generate a new one.
+
+Build!
+
+```bash
 ./gradlew build
 ```
 
