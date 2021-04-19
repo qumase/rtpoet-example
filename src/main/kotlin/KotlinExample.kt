@@ -1,6 +1,7 @@
 import ca.jahed.rtpoet.papyrusrt.PapyrusRTReader
 import ca.jahed.rtpoet.papyrusrt.PapyrusRTWriter
 import ca.jahed.rtpoet.papyrusrt.rts.SystemPorts
+import ca.jahed.rtpoet.papyrusrt.utils.PapyrusRTCodeGenerator
 import ca.jahed.rtpoet.rtmodel.*
 import ca.jahed.rtpoet.rtmodel.sm.RTPseudoState
 import ca.jahed.rtpoet.rtmodel.sm.RTState
@@ -112,6 +113,9 @@ fun main() {
 
     // get 'semantic' difference
     print(RTEqualityHelper.diff(pingerPonger, copy))
+
+    // generate the code
+    PapyrusRTCodeGenerator.generate(asRead)
 
     // Draw the pinger class, ignore its state machine
     RTVisualizer.draw(asRead.capsules.first { it.name == "Pinger" }, listOf(RTStateMachine::class.java))

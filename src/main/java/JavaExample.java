@@ -1,6 +1,7 @@
 import ca.jahed.rtpoet.papyrusrt.PapyrusRTReader;
 import ca.jahed.rtpoet.papyrusrt.PapyrusRTWriter;
 import ca.jahed.rtpoet.papyrusrt.rts.SystemPorts;
+import ca.jahed.rtpoet.papyrusrt.utils.PapyrusRTCodeGenerator;
 import ca.jahed.rtpoet.rtmodel.*;
 import ca.jahed.rtpoet.rtmodel.sm.RTPseudoState;
 import ca.jahed.rtpoet.rtmodel.sm.RTState;
@@ -10,6 +11,7 @@ import ca.jahed.rtpoet.rtmodel.types.primitivetype.RTInt;
 import ca.jahed.rtpoet.utils.RTDeepCopier;
 import ca.jahed.rtpoet.utils.RTEqualityHelper;
 import ca.jahed.rtpoet.utils.RTModelValidator;
+import ca.jahed.rtpoet.visualizer.RTVisualizer;
 
 public class JavaExample {
 
@@ -100,5 +102,11 @@ public class JavaExample {
 
         // get 'semantic' difference
         System.out.println(RTEqualityHelper.diff(pingerPonger, copy));
+
+        // generate the code
+        PapyrusRTCodeGenerator.Companion.generate(asRead, "code");
+
+        // Draw the model
+        RTVisualizer.INSTANCE.draw(asRead, null);
     }
 }
