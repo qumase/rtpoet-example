@@ -104,7 +104,7 @@ fun main() {
 
     // semantic equality (not really, but forgiving. e.g., diff in element names are ignored)
     // if comparing multiple elements, create an RTEqualityHelper object and use check(e1, e2) for better performance
-    assert(asRead == pingerPonger)
+    assert(RTEqualityHelper.isEqual(asRead, pingerPonger))
 
     // copy it && modify something
     // You can use an RTDeepCopier to copy multiple elements. Copies are cached so an element is never copied twice.

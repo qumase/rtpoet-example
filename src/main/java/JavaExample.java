@@ -13,6 +13,8 @@ import ca.jahed.rtpoet.utils.RTEqualityHelper;
 import ca.jahed.rtpoet.utils.RTModelValidator;
 import ca.jahed.rtpoet.visualizer.RTVisualizer;
 
+import java.util.ArrayList;
+
 public class JavaExample {
 
     public static RTModel createPingerPonger() {
@@ -93,7 +95,7 @@ public class JavaExample {
         RTModel asRead = PapyrusRTReader.read("PingerPonger.uml");
 
         // semantic equality (not really, but forgiving. e.g., diff in element names are ignored)
-        assert (asRead.equals(pingerPonger));
+        assert (RTEqualityHelper.isEqual(asRead, pingerPonger));
 
         // copy it && modify something
         // You can use an RTDeepCopier to copy multiple elements. Copies are cached so an element is never copied twice.
@@ -107,6 +109,6 @@ public class JavaExample {
         PapyrusRTCodeGenerator.Companion.generate(asRead, "code");
 
         // Draw the model
-        RTVisualizer.INSTANCE.draw(asRead, null);
+        RTVisualizer.INSTANCE.draw(asRead, new ArrayList<>());
     }
 }
