@@ -1,13 +1,13 @@
 import ca.jahed.rtpoet.papyrusrt.PapyrusRTReader
 import ca.jahed.rtpoet.papyrusrt.PapyrusRTWriter
+import ca.jahed.rtpoet.papyrusrt.generators.CppCodeGenerator
 import ca.jahed.rtpoet.papyrusrt.rts.SystemPorts
-import ca.jahed.rtpoet.papyrusrt.utils.PapyrusRTCodeGenerator
+import ca.jahed.rtpoet.papyrusrt.rts.primitivetype.RTInt
 import ca.jahed.rtpoet.rtmodel.*
 import ca.jahed.rtpoet.rtmodel.sm.RTPseudoState
 import ca.jahed.rtpoet.rtmodel.sm.RTState
 import ca.jahed.rtpoet.rtmodel.sm.RTStateMachine
 import ca.jahed.rtpoet.rtmodel.sm.RTTransition
-import ca.jahed.rtpoet.rtmodel.types.primitivetype.RTInt
 import ca.jahed.rtpoet.utils.RTDeepCopier
 import ca.jahed.rtpoet.utils.RTEqualityHelper
 import ca.jahed.rtpoet.utils.RTModelValidator
@@ -109,14 +109,14 @@ fun main() {
     // copy it && modify something
     // You can use an RTDeepCopier to copy multiple elements. Copies are cached so an element is never copied twice.
     val copy = RTDeepCopier().copy(pingerPonger) as RTModel
-    copy.top.capsule.connectors.clear()
+    copy.top?.capsule?.connectors?.clear()
 
     // get 'semantic' difference
     print(RTEqualityHelper.diff(pingerPonger, copy))
 
     // generate the code
-    PapyrusRTCodeGenerator.generate(asRead)
+    CppCodeGenerator.generate(asRead)
 
     // Draw the pinger class, ignore its state machine
-    RTVisualizer.draw(asRead.capsules.first { it.name == "Pinger" }, listOf(RTStateMachine::class.java))
+    RTVisualizer.draw(asRead.protocols.first { it.name == "PPProtocol" })
 }
